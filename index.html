@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 1</title>
+</head>
+<body>
+    <p id = "output"></p>
+    <script type="text/javascript">
+        const choices = ["r", "p","s"]
+        const output =document.getElementById("output") 
+        
+        let wins = 0;
+        let losses = 0;
+        let ties = 0;
+        
+        for (let i = 0; i < 3; i = i + 1) {
+            
+            let userChoice = null;
+            
+            while (userChoice === null) {
+                userChoice = prompt ("game " + i + ": Choose r, p, or s!!").toLocaleLowerCase();
+                
+                if (!choices.includes(userChoice)) {
+                    userChoice = null;
+                }
+                
+            }
+            let compChoice = Math.floor(Math.random() * 3);
+            
+            compChoice =choices [compChoice]
+
+            output.innerHTML += "Player chose " +userChoice
+                + ", computer chose " + compChoice
+                +"<br />";
+            
+            if (userChoice==="r") {
+                if (compChoice==="r") {
+                    ties = ties + 1;
+                    output.innerHTML += "Tie Game! <br />"
+                }
+                if (compChoice==="p") {
+                    losses = losses +1;
+                    output.innerHTML += "You Loose! <br />"
+                }
+                if (compChoice==="s") {
+                    wins = wins + 1;
+                    output.innerHTML += "You win! <br />"
+                }
+            }
+            if (userChoice==="p") {
+                if (compChoice==="p") {
+                    ties = ties + 1;
+                    output.innerHTML += "Tie Game! <br />"
+                }
+                if (compChoice==="s") {
+                    losses = losses +1;
+                    output.innerHTML += "You Loose! <br />"
+                }
+                if (compChoice==="r") {
+                    wins = wins + 1;
+                    output.innerHTML += "You win! <br />"
+                }
+            }
+            
+            if (userChoice==="s") {
+                if (compChoice==="s") {
+                    ties = ties + 1;
+                    output.innerHTML += "Tie Game! <br />"
+                }
+                if (compChoice==="r") {
+                    losses = losses +1;
+                    output.innerHTML += "You Loose! <br />"
+                }
+                if (compChoice==="p") {
+                    wins = wins + 1;
+                    output.innerHTML += "You win! <br />"
+                }
+            }
+
+            output.innerHTML += wins + " Wins " 
+            + losses + " Losses "
+            + ties + " ties <br />"
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
+        //Players
+        var userChoice = prompt("please enter rock, paper, scissors");
+        var userChoice = ["rock", "paper", "scissors"];
+        var compChoice = ["rock", "paper", "scissors"];
+        //Objects
+        var name = "rock";
+        var name = "paper";
+        var name = "scissors";
+        //score tied
+        var playerTied = 0;
+        var computerTied = 0;
+        //score player wins
+        var playerWin = 0;
+        // score player looses
+        var playerLooses = 0;
+        //score computer win
+        var computerWin = 0;
+        //score computer looses
+        var computerLooses = 0;
+        //promp user
+        
+        alert(userChoice)
+        */
+        
+    </script>
+</body>
+</html>
